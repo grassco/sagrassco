@@ -15,6 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to The Grass Company
         </h1>
+        <h3>From our farm to your yard</h3>
       </main>
 
       <footer className={styles.footer}>
