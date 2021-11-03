@@ -10,14 +10,12 @@ export default function Home() {
         <meta name="description" content="The Grass Company | From our farm to your yard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to The Grass Company
         </h1>
         <h3>From our farm to your yard</h3>
       </main>
-
       <footer className={styles.footer}>
         Copyright 2021
       </footer>
