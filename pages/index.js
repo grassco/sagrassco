@@ -1,24 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Layout from 'components/layout'
+import styles from 'styles/Home.module.scss'
+import { pages } from '@lib/constants';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>The Grass Company</title>
-        <meta name="description" content="The Grass Company | From our farm to your yard" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to The Grass Company
-        </h1>
-        <h3>From our farm to your yard</h3>
-      </main>
-      <footer className={styles.footer}>
-        Copyright 2021
-      </footer>
-    </div>
+    <Layout title={pages.home.title}>
+      <div className={styles.container}>
+        <section className={styles.hero}>
+          <div className={styles.hero__content}>
+            <h1 className={styles.hero__title}>Welcome to The Grass Company</h1>
+            <h2 className={styles.hero__subtitle}>From our farm to your home</h2>
+          </div>
+        </section>
+      </div>
+    </Layout>
   )
 }

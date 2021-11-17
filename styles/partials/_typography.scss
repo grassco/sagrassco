@@ -1,0 +1,7 @@
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'Marck Script', cursive;
+
+:export {
+  $primaryFont: $primary-font;
+  $secondaryFont: $secondary-font;
+}
