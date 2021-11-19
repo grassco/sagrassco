@@ -18,7 +18,7 @@ const Layout = ({ children, title }) => {
         <link rel="apple-touch-icon" sizes="192x192" href="icon-ios.png" />
       </Head>
       <nav className={styles.navigation}>
-        <span>Brand Logo</span>
+        <img src="logo-v3.png" alt="SA Grass Company logo" height="60" />
         <ul>
           <li>Our Grass</li>
           <li>About Us</li>
@@ -29,7 +29,7 @@ const Layout = ({ children, title }) => {
         { children }
       </main>
       <footer className={styles.footer}>
-        Copyright 2021 | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
+        Copyright &#169; 2021 | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
       </footer>
     </div>
   )

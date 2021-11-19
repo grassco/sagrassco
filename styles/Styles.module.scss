@@ -4,6 +4,7 @@
 
 .container {
   font-family: $primary-font;
+  margin-bottom: 100px;
 }
 
 .footer {
@@ -23,7 +24,7 @@
 }
 
 .navigation {
-  height: 100px;
+  height: 70px;
   display: flex;
   width: 100%;
   max-width: 992px;

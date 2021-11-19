@@ -2,6 +2,9 @@
 .body__gray {
   background-color: #f8f9f9;
 }
+.grecaptcha-badge {
+  bottom: 50px !important;
+}
 
 *,
 *:after,

@@ -3,6 +3,7 @@
 
 // Large devices (desktops, 992px and up)
 // @media (min-width: 992px) { ... }
+@import './variables';
 
 @mixin desktop() {
   @media (min-width: 992px) {
@@ -19,4 +20,35 @@
 @mixin box-shadow() {
   box-shadow: 0px 3px 5px 1px #e0e0e0;
   border-radius: 4px;
+}
+
+@mixin primary-btn() {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: none;
+  border: 1px solid white;
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+  }
+}
+@mixin green-btn() {
+  background-color: $primary-color;
+  border: 1px solid white;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 4px;
+  &:hover,
+  &:focus {
+    background-color: lighten($primary-color, 5%);
+  }
+}
+
+@mixin error-code() {
+  color: $error;
+  font-size: 0.8em;
 }
