@@ -77,6 +77,11 @@
     border: 1px solid lightgray;
     border-radius: 4px;
     resize: none;
+    &:focus,
+    &:active {
+      outline: none;
+      border-bottom: 2px solid $primary-color;
+    }
   }
 }
 
@@ -85,10 +90,15 @@
   border-radius: 0;
   border: none;
   border-bottom: 1px solid lightgrey;
-  margin: 0.5em 0;
+  margin-top: 0.5em;
   &:focus,
   &:active {
     outline: none;
     border-bottom: 2px solid $primary-color;
   }
+}
+
+.field__error {
+  color: $error;
+  font-size: 0.8em;
 }

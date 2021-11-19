@@ -5,7 +5,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react-hooks/recommended', 'plugin:react/recommended'],
+  extends: ['eslint:recommended', 'plugin:react-hooks/recommended', 'plugin:react/recommended', 'plugin:@next/next/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -15,6 +15,8 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": 0,
     'react/react-in-jsx-scope': 'off',
     'no-console': 'warn',
     quotes: ['error', 'single', { allowTemplateLiterals: false, avoidEscape: true }],
@@ -25,5 +27,5 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['node_modules/', '.next/', '**/integrations/flipp/*.js', '*__tests__*'],
+  ignorePatterns: ['node_modules/', '.next/', '*__tests__*'],
 };

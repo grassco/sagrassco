@@ -5,24 +5,70 @@ import { pages } from '@lib/constants';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm, Controller } from 'react-hook-form';
 import NumberFormat from 'react-number-format';
+import sanitizeHtml from 'sanitize-html';
+import Alert from 'components/alert';
 
 export default function Home() {
+  const [isError, setIsError] = useState(null);
+  const [showResponse, setShowResponse] = useState(false);
   const reRef = useRef();
 
-  const { register, handleSubmit, formState: { errors }, control } = useForm();
+  const { register, handleSubmit, formState: { errors }, control, reset } = useForm();
 
   async function handleOnSubmit(data) {
 
     const token = await reRef.current.executeAsync();
+    reRef.current.reset();
+    const formData = {
+      data: {
+        email: sanitizeHtml(data.email),
+        message: sanitizeHtml(data.message),
+        name: sanitizeHtml(data.name),
+        phone: sanitizeHtml(data.phone)
+      },
+      token
+    }
 
-    console.log(token);
-    console.log(data);
-    
     fetch('/api/contact', {
         method: 'post',
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData)
       })
+      .then(response => {
+        if (response.status === 400) {
+          setIsError(true);
+          setShowResponse(true);
+          reset({
+            email: '',
+            message: '',
+            name: '',
+            phone: ''
+          });
+        }
+        if (response.status === 200) {
+          setShowResponse(true);
+          setIsError(false)
+          reset({
+            email: '',
+            message: '',
+            name: '',
+            phone: ''
+          });
+        }
+      })
+      .catch(error => {
+        setShowResponse(true);
+        setIsError(true)
+        reset({
+          email: '',
+          message: '',
+          name: '',
+          phone: ''
+        });
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
     }
+
   return (
     <Layout title={pages.home.title}>
       <div>
@@ -35,33 +81,40 @@ export default function Home() {
         </section>
         <section className={styles.section__contact_us}>
           <h2>Contact Us</h2>
-          <p>Drop us a note, and we'll get back to you as soon as possible</p>
+          <p>Drop us a note, and we will get back to you as soon as possible</p>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
             size="invisible"
             ref={reRef}
           />
-
-          <form className={styles.form__contact_us} onSubmit={handleSubmit((data) => {
-            handleOnSubmit(data);
-          })}>
+          {showResponse && (
+            isError ?
+              <Alert type="error">Something went wrong! Please, try again.</Alert> :
+              <Alert type="success">Thank you for contacting us. We'll get back to you as soon as possible</Alert>
+          )}
+          <form
+            className={styles.form__contact_us}
+            onSubmit={handleSubmit((data) => {
+              handleOnSubmit(data);
+            })}
+          >
 
             {/* <label htmlFor="name">Your name:</label> */}
             <input
               type="text"
               placeholder="Enter your name ..."
-              {...register("name", { required: 'Name is a required field' })}
+              {...register('name', { required: 'Name is a required field' })}
               className={styles.field__clean}
             />
-            {errors.name && <span>{errors.name.message}</span>}
+            {errors.name && <span className={styles.field__error}>{errors.name.message}</span>}
             {/* <label htmlFor="email">Your email:</label> */}
             <input
               type="email"
               placeholder="Enter your email ..."
-              {...register("email", { required: true })}
+              {...register('email', { required: true })}
               className={styles.field__clean}
             />
-            {errors.email && <span>Email is a required field</span>}
+            {errors.email && <span className={styles.field__error}>Email is a required field</span>}
 
             {/* <label htmlFor="phone">Your phone(optional):</label> */}
             <Controller
@@ -79,10 +132,10 @@ export default function Home() {
                   />
                   )}
             />
-            {errors.phone && <span>{errors.phone.message}</span>}
+            {errors.phone && <span className={styles.field__error}>{errors.phone.message}</span>}
             <label htmlFor="message">Your message to us:</label>
-            <textarea type="text" placeholder="Your message ..." {...register("message", { required: "Please fill in the message", maxLength: 300 })} rows="10" maxLength="300" />
-            {errors.message && <span>{errors.message.message}</span>}
+            <textarea type="text" placeholder="Your message ..." {...register('message', { required: 'Please fill in the message', maxLength: 300 })} rows="10" maxLength="300" />
+            {errors.message && <span className={styles.field__error}>{errors.message.message}</span>}
             <button type="submit">Send It</button>
           </form>
         </section>

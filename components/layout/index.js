@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import styles from 'styles/Styles.module.scss';
 import { app } from '@lib/constants';
+import Image from 'next/image';
 
 const Layout = ({ children, title }) => {
   return (
@@ -18,7 +19,7 @@ const Layout = ({ children, title }) => {
         <link rel="apple-touch-icon" sizes="192x192" href="icon-ios.png" />
       </Head>
       <nav className={styles.navigation}>
-        <img src="logo-v3.png" alt="SA Grass Company logo" height="60" />
+        <Image src="/logo-v3.png" alt="SA Grass Company logo" height="60" width="124" />
         <ul>
           <li>Our Grass</li>
           <li>About Us</li>
