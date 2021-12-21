@@ -82,6 +82,7 @@ export default function Home() {
         <section className={styles.section__contact_us}>
           <h2>Contact Us</h2>
           <p>Drop us a note</p>
+          <pre className={process.env.SENDGRID_API_KEY}></pre>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
             size="invisible"
