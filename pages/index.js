@@ -81,7 +81,7 @@ export default function Home() {
         </section>
         <section className={styles.section__contact_us}>
           <h2>Contact Us</h2>
-          <p>Drop us a note, and we will get back to you as soon as possible</p>
+          <p>Drop us a note</p>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
             size="invisible"
