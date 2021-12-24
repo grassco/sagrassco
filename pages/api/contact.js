@@ -1,14 +1,22 @@
+const axios = require('axios');
+const https = require('https');
+
 const mail = require('@sendgrid/mail');
 
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function validateHuman(token) {
   const tajno = process.env.GOOGLE_RECAPTCHA_SECRET_KEY;
-
-  const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${tajno}&response=${token}`, { method: 'post'})
-  const data = await response.json();
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${tajno}&response=${token}`;
+  const response = await axios.post(recaptchaUrl, {
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: false
+    })
+  });
   
-  return data.success;
+  const data = await response.data;
+  console.log(data);
+  return data?.success;
 }
 
 export default async function handler(req, res) {
