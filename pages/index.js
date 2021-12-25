@@ -8,6 +8,8 @@ import NumberFormat from 'react-number-format';
 import sanitizeHtml from 'sanitize-html';
 import Alert from 'components/alert';
 import AboutUs from 'components/about-us';
+import OurGrass from 'components/our-grass';
+import Testemonials from 'components/testemonials';
 
 export default function Home() {
   const [isError, setIsError] = useState(null);
@@ -80,6 +82,10 @@ export default function Home() {
             <button className={styles.btn__primary} type="button">Contact Us</button>
           </div>
         </section>
+
+        <OurGrass />
+
+        <Testemonials />
 
         <AboutUs />
         

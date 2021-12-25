@@ -23,7 +23,7 @@ const Layout = ({ children, title }) => {
         { children }
       </main>
       <footer className={styles.footer}>
-        Copyright &#169; 2021 | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
+        Copyright &#169; 2021, The Grass Company | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
       </footer>
     </div>
   )

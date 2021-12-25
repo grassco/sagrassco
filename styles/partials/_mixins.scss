@@ -4,6 +4,7 @@
 // Large devices (desktops, 992px and up)
 // @media (min-width: 992px) { ... }
 @import './variables';
+@import 'styles/partials/typography';
 
 @mixin desktop() {
   @media (min-width: 992px) {
@@ -51,4 +52,12 @@
 @mixin error-code() {
   color: $error;
   font-size: 0.8em;
+}
+
+@mixin section-title() {
+  font-family: $secondary-font;
+  color: $primary-color;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0;
 }

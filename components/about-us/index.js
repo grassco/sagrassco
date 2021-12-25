@@ -4,7 +4,7 @@ import Image from 'next/image';
 const AboutUs = () => {
   return (
     <section className={styles.about_us}>
-      <h2 className={styles.title}>
+      <h2 className={styles.title} id="about-us">
         About Us
       </h2>
       <p className={styles.subtitle}>Get to know us</p>

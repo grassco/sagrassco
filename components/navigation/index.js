@@ -22,7 +22,7 @@ const Navigation = () => {
       </div>
       <nav className={styles.navigation}>
         <Link href="/">
-          <a>
+          <a className="brand">
             <Image src="/logo-v3.png" alt="SA Grass Company logo" height="60" width="124" />
           </a>
         </Link>

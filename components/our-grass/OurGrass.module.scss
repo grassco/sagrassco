@@ -1,0 +1,48 @@
+@import 'styles/partials/mixins';
+
+.title {
+  @include section-title();
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.our_grass_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  margin: 0 auto;
+  max-width: $desktop-breakpoint;
+  @include mobile() {
+    grid-template-columns: 1fr;
+  }
+}
+
+.augustine,
+.bermuda,
+.zoysia {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.4;
+  @include mobile() {
+    max-width: 315px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+  figure {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+  figcaption {
+    font-weight: 600;
+  }
+}
+
+.our_grass {
+  @include mobile() {
+    padding: 0 1em;
+  }
+}

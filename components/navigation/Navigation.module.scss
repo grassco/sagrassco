@@ -1,4 +1,5 @@
 @import 'styles/partials/variables';
+@import 'styles/partials/mixins';
 
 .navigation {
   height: 70px;
@@ -8,7 +9,15 @@
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+  @include mobile() {
+    a {
+      margin: 0 auto;
+    }
+  }
   ul {
+    @include mobile() {
+      display: none;
+    }
     display: flex;
     li,
     a {
@@ -25,6 +34,7 @@
 .topHeader {
   width: 100%;
   background-color: white;
+  padding-top: 30px;
 }
 
 .header {
@@ -34,6 +44,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
   span {
     color: $font--alert;
     font-weight: 600;
