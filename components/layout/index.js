@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import styles from 'styles/Styles.module.scss';
 import { app } from '@lib/constants';
-import Image from 'next/image';
+import Navigation from 'components/navigation';
 
 const Layout = ({ children, title }) => {
   return (
@@ -18,14 +18,7 @@ const Layout = ({ children, title }) => {
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="192x192" href="icon-ios.png" />
       </Head>
-      <nav className={styles.navigation}>
-        <Image src="/logo-v3.png" alt="SA Grass Company logo" height="60" width="124" />
-        <ul>
-          <li>Our Grass</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-        </ul>
-      </nav>
+      <Navigation />
       <main className={styles.main}>
         { children }
       </main>

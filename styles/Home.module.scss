@@ -47,6 +47,9 @@
   max-width: 992px;
   h2 {
     margin-bottom: 0;
+    font-family: $secondary-font;
+    color: $primary-color;
+    font-size: 50px;
   }
 }
 .form__contact_us {

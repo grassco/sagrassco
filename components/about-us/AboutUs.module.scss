@@ -1,0 +1,37 @@
+@import 'styles/partials/variables';
+@import 'styles/partials/typography';
+@import 'styles/partials/mixins';
+
+.about_us {
+  max-width: $desktop-breakpoint;
+  margin: 3em auto;
+}
+
+.title {
+  font-family: $secondary-font;
+  color: $primary-color;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.about_us_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  margin-top: 2em;
+  @include mobile() {
+    grid-template-columns: 1fr;
+    padding: 0 1em;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+  }
+}

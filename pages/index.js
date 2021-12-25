@@ -7,6 +7,7 @@ import { useForm, Controller } from 'react-hook-form';
 import NumberFormat from 'react-number-format';
 import sanitizeHtml from 'sanitize-html';
 import Alert from 'components/alert';
+import AboutUs from 'components/about-us';
 
 export default function Home() {
   const [isError, setIsError] = useState(null);
@@ -79,10 +80,12 @@ export default function Home() {
             <button className={styles.btn__primary} type="button">Contact Us</button>
           </div>
         </section>
+
+        <AboutUs />
+        
         <section className={styles.section__contact_us}>
-          <h2>Contact Us</h2>
+          <h2 id="contact-us">Contact Us</h2>
           <p>Drop us a note, and we'll get back to you as soon as possible</p>
-          <pre className={process.env.SENDGRID_API_KEY}></pre>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
             size="invisible"
