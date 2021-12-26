@@ -1,0 +1,47 @@
+@import 'styles/partials/variables';
+@import 'styles/partials/mixins';
+
+.container {
+  background-color: white;
+  border-radius: 25px;
+  height: 385px;
+  @include mobile() {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+}
+.g_logo {
+  margin-top: 5px !important;
+  margin-left: 12px !important;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+.subheading {
+  display: flex;
+}
+.reviewer {
+  p {
+    margin-bottom: 2px;
+  }
+}
+.content {
+  padding: 0 1em;
+  font-size: 16px;
+  margin-top: 2em;
+  line-height: 1.5;
+  font-weight: 100;
+  font-style: italic;
+  text-align: center;
+  height: 275px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  a {
+    font-style: normal;
+    color: $primary-color;
+  }
+}
