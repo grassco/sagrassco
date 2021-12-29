@@ -23,7 +23,15 @@ const Layout = ({ children, title }) => {
         { children }
       </main>
       <footer className={styles.footer}>
-        Copyright &#169; 2021, The Grass Company | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
+        <p>
+          <div>10519 Shire Country, San Antonio, TX 78254</div>
+          <div>Howard Banks (210) 622-7225</div>
+          <div>howardbanks@yahoo.com</div>
+        </p>
+        <hr />
+        <span>
+          Copyright &#169; {new Date().getFullYear()}, The Grass Company | Handcrafted by <a href="https://manoilov.me"> nmanoilov</a>
+        </span>
       </footer>
     </div>
   )

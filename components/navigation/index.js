@@ -18,7 +18,7 @@ const Navigation = () => {
             <a><BsYoutube size={25} /></a>
           </Link>
         </div>
-        <span>(210) 555-5555</span>
+        <span>(210) 622-7225</span>
       </div>
       <nav className={styles.navigation}>
         <Link href="/">
@@ -28,17 +28,17 @@ const Navigation = () => {
         </Link>
         <ul>
           <li>
-            <Link href="#our-grass">
+            <Link href="/#our-grass">
               <a>Our Grass</a>
             </Link>
           </li>
           <li>
-            <Link href="#about-us">
+            <Link href="/#about-us">
               <a>About Us</a>
             </Link>
           </li>
           <li>
-            <Link href="#contact-us">
+            <Link href="/contact-us">
               <a>Contact Us</a>
             </Link>
           </li>

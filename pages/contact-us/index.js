@@ -1,17 +1,12 @@
 import { useRef, useState } from 'react';
 import Layout from 'components/layout'
-import styles from 'styles/Home.module.scss'
+import styles from './ContactUs.module.scss'
 import { pages } from '@lib/constants';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm, Controller } from 'react-hook-form';
 import NumberFormat from 'react-number-format';
 import sanitizeHtml from 'sanitize-html';
 import Alert from 'components/alert';
-import AboutUs from 'components/about-us';
-import OurGrass from 'components/our-grass';
-import Testemonials from 'components/testemonials';
-import OurProducts from 'components/our-products';
-import Link from 'next/link';
 
 export default function Home() {
   const [isError, setIsError] = useState(null);
@@ -81,22 +76,9 @@ export default function Home() {
           <div className={styles.hero__content}>
             <h1 className={styles.hero__title}>Welcome to The Grass Company</h1>
             <h2 className={styles.hero__subtitle}>From our farm to your home</h2>
-            <Link href="contact-us">
-              <a>
-                <button className={styles.btn__primary} type="button">Contact Us</button>
-              </a>
-            </Link>
           </div>
         </section>
-
-        <OurGrass />
-
-        <OurProducts />
-
-        <Testemonials />
-
-        <AboutUs />
-        
+  
         <section className={styles.section__contact_us}>
           <h2 id="contact-us">Contact Us</h2>
           <p>Drop us a note, and we'll get back to you as soon as possible</p>
