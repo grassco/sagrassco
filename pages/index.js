@@ -10,6 +10,7 @@ import Alert from 'components/alert';
 import AboutUs from 'components/about-us';
 import OurGrass from 'components/our-grass';
 import Testemonials from 'components/testemonials';
+import OurProducts from 'components/our-products';
 
 export default function Home() {
   const [isError, setIsError] = useState(null);
@@ -84,6 +85,8 @@ export default function Home() {
         </section>
 
         <OurGrass />
+
+        <OurProducts />
 
         <Testemonials />
 
