@@ -10,13 +10,15 @@
   justify-content: space-between;
   align-items: center;
   @include mobile() {
+    flex-direction: column;
+    height: auto;
     a {
       margin: 0 auto;
     }
   }
   ul {
     @include mobile() {
-      display: none;
+      // display: none;
     }
     display: flex;
     li,
@@ -27,6 +29,11 @@
       text-transform: uppercase;
       color: $primary-color;
       font-weight: 600;
+      font-size: 14px;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }

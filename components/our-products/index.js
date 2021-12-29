@@ -9,7 +9,7 @@ const OurProducts = () => {
       </h2>
       <p className={styles.subtitle}>The highest quality grass</p>
       <div className={styles.our_products_content}>
-        <table className={styles.table} cellspacing="0">
+        <table className={styles.table} cellSpacing="0">
           <tr>
             <td>Bermuda Tifway 419</td>
             <td className={styles.price}>$160</td>
