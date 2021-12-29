@@ -30,9 +30,15 @@
       color: $primary-color;
       font-weight: 600;
       font-size: 14px;
+      @include mobile() {
+        margin: 0 5px;
+      }
       &:hover,
       &:focus {
         text-decoration: underline;
+      }
+      &:visited {
+        color: $primary-color;
       }
     }
   }
