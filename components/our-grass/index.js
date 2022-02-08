@@ -11,7 +11,7 @@ const OurGrass = () => {
       <div className={styles.our_grass_content}>
         <div className={styles.augustine}>
           <figure>
-            <Image src="/assets/st-augustine.png" alt="st augustine grass image" width="315" height="236" />
+            <Image src="/assets/st-augustine.webp" alt="st augustine grass image" width="315" height="236" />
             <figcaption>St. Augustine</figcaption>
           </figure>
           <div className={styles.grass_content}>
@@ -20,7 +20,7 @@ const OurGrass = () => {
         </div>
         <div className={styles.bermuda}>
           <figure>
-            <Image src="/assets/bermuda.png" alt="bermuda grass image" width="315" height="236" />
+            <Image src="/assets/bermuda.webp" alt="bermuda grass image" width="315" height="236" />
             <figcaption>Bermuda</figcaption>
           </figure>
           <div className={styles.grass_content}>
@@ -29,7 +29,7 @@ const OurGrass = () => {
         </div>
         <div className={styles.zoysia}>
           <figure>
-            <Image src="/assets/zoysia.png" alt="zoysia grass image" width="315" height="236" />
+            <Image src="/assets/zoysia.webp" alt="zoysia grass image" width="315" height="236" />
             <figcaption>Zoysia</figcaption>
           </figure>
           <div className={styles.grass_content}>

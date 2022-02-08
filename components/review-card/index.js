@@ -13,7 +13,7 @@ const ReviewCard = ({ name, logo, content, reviewUrl }) => {
             </div>
             <div className={styles.reviewer}>
               <p>{name}</p>
-              <Image src="/assets/stars.png" alt="5 stars" height="15" width="80" />
+              <Image src="/assets/stars.webp" alt="5 stars" height="15" width="80" />
             </div>
           </div>
         </div>

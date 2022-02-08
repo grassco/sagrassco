@@ -76,7 +76,7 @@ export default function Home() {
 
   return (
     <Layout title={pages.home.title}>
-      <div>
+      <div role="heading">
         <section className={styles.hero}>
           <div className={styles.hero__content}>
             <h1 className={styles.hero__title}>Welcome to The Grass Company</h1>

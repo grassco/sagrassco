@@ -36,10 +36,10 @@ const OurProducts = () => {
           </tr>
         </table>
         <figure className={styles.palletImage}>
-          <Image src="/assets/pallet.png" alt="pallet of grass" height="393" width="524" layout="responsive" />
+          <Image src="/assets/pallet.webp" alt="pallet of grass" height="393" width="524" layout="responsive" />
         </figure>
         <div className={styles.sod}>
-          <Image src="/assets/single-sod.png" alt="single grass sod" height="172" width="277" layout="responsive" />
+          <Image src="/assets/single-sod.webp" alt="single grass sod" height="172" width="277" layout="responsive" />
           <div className={styles.sodPrice}>
             <h4>Per piece</h4>
             <span>$2.00</span>

@@ -9,13 +9,13 @@ const Navigation = () => {
       <div className={styles.header}>
         <div className={styles.socialIcons}>
           <Link href="https://facebook.com">
-            <a><BsFacebook size={25} /></a>
+            <a><BsFacebook size={25} alt="facebook icon" /></a>
           </Link>
           <Link href="https://instagram.com">
-            <a><BsInstagram size={25} /></a>
+            <a><BsInstagram size={25} alt="instagram icon" /></a>
           </Link>
           <Link href="https://youtube.com">
-            <a><BsYoutube size={25} /></a>
+            <a><BsYoutube size={25} alt="youtube icon" /></a>
           </Link>
         </div>
         <span>(210) 622-7225</span>
@@ -23,7 +23,7 @@ const Navigation = () => {
       <nav className={styles.navigation}>
         <Link href="/">
           <a className="brand">
-            <Image src="/logo-v3.png" alt="SA Grass Company logo" height="60" width="124" />
+            <Image src="/logo-v3.webp" alt="SA Grass Company logo" height="60" width="124" />
           </a>
         </Link>
         <ul>
